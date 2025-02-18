@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ帳アプリ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid rgb(95, 107, 109);
+            border-radius: 10px;
+            padding: 10px 10px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        #container {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: aliceblue;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;        
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
+        }
+        #save-button {
+            padding: 8px 15px;
+            background-color: #2d7ed4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        #save-button:hover {
+            background-color: #154779;
+        }
+        #clear-all {
+            padding: 8px 15px;
+            background-color: #f33333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #clear-all:hover {
+            background-color: #9e2121;
+        }
+        #saved-memos {
+            margin-top: 20px;
+        }
+        #memo-list {
+            list-style: none;
+            padding-left: 10px;
+        }
+        .memo {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .memo-text {
+            flex-grow: 1;
+            margin-right: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .memo-date {
+            margin-right: 20px;
+        }
+        .edit-button, .delete-button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .edit-button {
+            background-color: #73c6e4;
+            color: white;
+
+        }
+        .edit-button:hover {
+            background-color: #3d8091;
+        }
+        .delete-button {
+            background-color: #e77e41;
+            color: white;
+
+        }
+        .delete-button:hover {
+            background-color: #8f4c25;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>簡易メモ帳</h2>
+        <textarea type="text" id="item-input" placeholder="ここにメモを入力してください…"></textarea>
+        <button id="save-button">保存</button>
+        <button id="clear-all">すべて削除</button>
+        <div id="saved-memos">
+            <h3>保存されたメモ一覧</h3>
+            <ul id="memo-list">
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="memo.js"></script>
+</body>
+</html>
